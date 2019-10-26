@@ -6,9 +6,60 @@
   height: 40vmin;
 }
 
+.Main-Header {
+  height: 5%;
+  background-color: #0a191e;
+  color: #d8b65c;
+  display: flex;
+  flex-direction: left;
+  align-items: center;
+  justify-content: left;
+  padding-left: 5%;
+}
+
+.Header-Left {
+  flex-direction: left;
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+
+.Nav-Space {
+  width: 100%;
+}
+
+.Nav-Bar {
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  list-style-type: none;
+}
+
+.Logo {
+  width: 50%;
+  min-width: 40%;
+  max-width: 60%;  
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.Header-Text {
+  color: #d8b65c;
+  font-family: arial;
+  font-size: 100%;
+  padding: 1%;
+}
+
+
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,5 +69,5 @@
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #5c746f;
 }
