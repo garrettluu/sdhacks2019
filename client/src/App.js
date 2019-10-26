@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./Pages/Home";
-import Login from "./Login";
+import Login from "./Pages/Login";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Logo from "./Images/logo.png";
 
