@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Futura";
+  src: url("/fonts/Futura medium bt.ttf");
+}
 .App {
   text-align: center;
 }
@@ -17,15 +21,13 @@
   padding-left: 5%;
 }
 
-.Header-Left {
-  flex-direction: left;
-  display: flex;
-  align-items: center;
-  width: 20%;
-}
-
-.Nav-Space {
-  width: 100%;
+.Logo {
+  height:"60px";
+  width:"auto";
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-left:10px;
+  margin-right:10px;
 }
 
 .Nav-Bar {
@@ -34,25 +36,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #000;
   list-style-type: none;
+  background-color: #0a191e;
 }
 
-.Logo {
-  width: 50%;
-  min-width: 40%;
-  max-width: 60%;  
+.Nav-Group {
+  display: flex;
+  flex-direction: row;
 }
 
-a:link {
-  text-decoration: none;
-}
-
-.Header-Text {
+.Nav-Link {
   color: #d8b65c;
   font-family: arial;
   font-size: 100%;
-  padding: 1%;
+  padding: 25px 50px;
+  text-decoration: none;
 }
 
 
