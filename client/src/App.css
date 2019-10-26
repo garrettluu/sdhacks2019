@@ -2,24 +2,6 @@
   font-family: "Futura";
   src: url("/font/futura-medium-bt.ttf");
 }
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.Main-Header {
-  height: 5%;
-  background-color: #0a191e;
-  color: #d8b65c;
-  display: flex;
-  flex-direction: left;
-  align-items: center;
-  justify-content: left;
-  padding-left: 5%;
-}
 
 .Logo {
   height:"60px";
@@ -51,23 +33,6 @@
   font-size: 20px;
   padding: 25px 50px;
   text-decoration: none;
-}
-
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #5c746f;
 }
 
 .content {
