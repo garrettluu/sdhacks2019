@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+let cors = require('cors');
+
 let admin = require('firebase-admin');
 let serviceAccount = require('./private-firebase-admin.json');
 //
@@ -16,7 +18,8 @@ admin.initializeApp({
 // initialize firestore database
 let db = admin.firestore();
 
-var app = express();
+let app = express();
+app.use(cors());
 
 var indexRouter = require('./routes/index')(db);
 var usersRouter = require('./routes/users');
