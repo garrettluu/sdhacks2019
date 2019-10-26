@@ -12,9 +12,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="header">
-
           <div className="Nav-Bar">
-
             <div className="Nav-Group">
               <img src={Logo} className="Logo" alt="logo"
                 height="60px" width="auto"/>
@@ -24,8 +22,8 @@ class App extends React.Component {
               <Link className="Nav-Link" to="/about">
                 About
               </Link>
-              <Link className="Nav-Link" to="/users">
-                Users
+              <Link className="Nav-Link" to="/login">
+                Login
               </Link>
             </div>
           </div>
