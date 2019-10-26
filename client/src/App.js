@@ -1,10 +1,10 @@
 import React from "react";
-import Home from "./Pages/Home.js";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "./Pages/Home";
+import Login from "./Login";
+import { BrowserRouter, Link, Route } from "react-router-dom";
 import Logo from "./Images/logo.png";
-//import logo from './logo.svg';
-/*      <header className="App-header">
-  //<img src={logo} className="App-logo" alt="logo" /> */
+
+
 import "./App.css";
 
 class App extends React.Component {
@@ -46,7 +46,6 @@ class App extends React.Component {
         </div>
 
       </BrowserRouter>
-      </div>
     );
   }
 }
