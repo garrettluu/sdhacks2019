@@ -19,6 +19,18 @@ module.exports = function(db) {
     res.send(req);
   });
 
+  /* creates a listing with the specified info */
+  router.get('/createlisting', (req, res, next) => {
+    let listingsRef = db.collection('listings').doc(req.body.title);
+
+    let createListing = listingsRef.set({
+      name: req.body.name,
+      class: req.body.name,
+      location: req.body.location,
+      time: req.body.time
+    });
+  });
+
   return router;
 };
 //module.exports = router;
