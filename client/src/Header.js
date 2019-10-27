@@ -8,30 +8,33 @@ import SelectScreen from "./Pages/SelectScreen.js";
 import Logo from "./Images/logo.png";
 
 import "./CSS/Header.css";
+import FindGroup from "./Pages/FindGroup";
 
 class Header extends Component {
     render() {
         return (
             <BrowserRouter>
-                        <div className="header">
-                <div className="signs">  
+                <div className="header">
+                    <div className="navBar">
+                        <div className="signs">
 
-		<img src={Logo} className="Logo" alt="logo"
+                            <img src={Logo} className="Logo" alt="logo"
                                  height="60px" width="auto"/>
-			<Link className= "title" to="/">
-				STAKK
-		
-                            </Link>
-                </div>    
+                            <Link className= "title" to="/">
+                                STAKK
 
-		<div className="navBar">    
+                            </Link>
+                        </div>
+
+                        <div className="navGroup">
                             <Link className="navLink" to="/stakks">
                                 QuikStakk
                             </Link>
                             <Link className="navLink" to="/login">
                                 Login
                             </Link>
-		</div>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -39,6 +42,7 @@ class Header extends Component {
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/stakks" component={SelectScreen}/>
+                    <Route exact path="/stakks/findGroup" component={FindGroup}/>
                 </div>
 
             </BrowserRouter>

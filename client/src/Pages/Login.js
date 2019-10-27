@@ -64,7 +64,7 @@ class Login extends Component {
    redirectToHome() {
         if (this.state.redirect) {
             return <Redirect to={{
-                pathname: "/stakk",
+                pathname: "/stakks",
                 state: { isLoggedIn: this.state.isLoggedIn }
             }}/>
         }

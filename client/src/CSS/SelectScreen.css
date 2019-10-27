@@ -1,4 +1,7 @@
-
+.content {
+	background-color: #282c34;
+	height: 100%;
+}
 .choiceContainer{
 	padding: 0 10vw 0 10vw;
 	display: flex;

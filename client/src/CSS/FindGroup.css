@@ -1,0 +1,47 @@
+.FindGroup {
+    padding:15px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: #282c34;
+}
+.list-title {
+    font-family: "Futura", sans-serif;
+    font-size: 24px;
+    color: #d8b65c;
+    padding: 15px;
+}
+
+.half-screen {
+    width: 50%
+}
+
+.cool-image {
+    text-align: center;
+    position: fixed;
+    left: 50%;
+}
+
+.listing-card {
+    background-color: #0a191e;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    width: 90%;
+}
+
+.listing-title {
+    font-family: "Futura", sans-serif;
+    color: white;
+    font-size: 24px;
+}
+
+.listing-field {
+    font-family: "Futura", sans-serif;
+    color: white;
+}
+
+.listing-join {
+
+}

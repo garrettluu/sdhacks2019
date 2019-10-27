@@ -3,9 +3,10 @@ import React, { Component } from "react";
 class Listing extends Component {
     render() {
         return (<div className="listing-card">
-            <h3>{this.props.title}</h3>
-            <h4>Organizer: {this.props.name}</h4>
-            <h4>Course: {this.props.course}</h4>
+            <p className="listing-title">{this.props.title}</p>
+            <p className="listing-field">Organizer: {this.props.name}</p>
+            <p className="listing-field">Course: {this.props.course}</p>
+            <button className="listing-join" onClick={this.props.onJoin}>Join group</button>
         </div>);
     }
 }
