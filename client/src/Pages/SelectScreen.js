@@ -1,5 +1,6 @@
 import React from "react";
-import "./SelectScreen.css"
+import "../CSS/SelectScreen.css";
+import "../CSS/Header.css";
 import MyStakks from "../Images/MyStakks.png"
 import FindGroup from "../Images/FindGroup.png"
 import { BrowserRouter, Link, Route } from "react-router-dom";
@@ -7,21 +8,13 @@ import { BrowserRouter, Link, Route } from "react-router-dom";
 export default class SelectScreen extends React.Component {
   render() {
     return (
-	<div className="Screen">
+	<div className="content">
       <BrowserRouter>
-          <div className="Link-Container">
-              <Link to="/stakk/myStakks">
-              		<img src={MyStakks} className="Pictures" alt="MyStakks"
-                	height="180px" width="auto"/>
-              </Link>
-              <Link to="/stakk/findGroup">
-              		<img src={FindGroup} className="Pictures" alt="FindGroup"
-                	height="180px" width="auto"/>
-              </Link>
-        </div>
 
       <div className="">
-        <Route exact path="/stakk/myStakks" component={myStakks}/>
+        <Route exact path="/stakks">
+	    {choice()}
+	    </Route>
         <Route exact path="/stakk/findGroup" component={findGroup}/>
     </div>
 	    <div />
@@ -30,6 +23,30 @@ export default class SelectScreen extends React.Component {
 	    </div>
     );
   }
+}
+
+function choice(){
+	return(
+          <div className="choiceContainer">
+              
+		<Link className="choiceTitle" to="/stakk/myStakks">
+		<div className="choice">
+		<img src={MyStakks} className="choicePic" alt="MyStakks"
+                	height="220px" width="auto"/>
+		 See Stakks
+		</div>
+		</Link>
+
+              <Link className="choiceTitle" to="/stakk/findGroup">
+		<div className="choice">
+              		<img src={FindGroup} className="choicePic" alt="FindGroup"
+                	height="220px" width="auto"/>
+		Group Up
+		</div>
+              </Link>
+        </div>
+
+	)
 }
 
 function myStakks(){
