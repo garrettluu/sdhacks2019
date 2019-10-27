@@ -17,10 +17,12 @@
   padding-left: 15%;
 }
 
-.root {
+#signin-button {
+  background-color: #d8b65c;
+  border: none;
+  font-family: "Futura", sans-serif;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 2px;
 }
 
-.input {
-  color: #FFF;
-  border-color: #FFF;
-}

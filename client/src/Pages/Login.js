@@ -56,6 +56,12 @@ class Login extends Component {
               placeholder="hunter2" className="root"/>
           </div>
         </ThemeProvider>
+
+        <div className="input-field">
+        <button id="signin-button">
+            Sign in
+        </button>
+        </div>
         <Circle diameter="1000px" backgroundColor="#4a9878" x="1400px" y="-230px"/>
       </div>
     );
