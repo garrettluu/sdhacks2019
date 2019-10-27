@@ -1,13 +1,23 @@
 .Login {
   height: 100%;
+  background-color: #282c32;
 }
 #login-header {
   font-family: "Futura", sans-serif;
   padding: 10px;
   margin: 10px;
+  color: #FFF;
 }
 
 .input-field {
   padding: 10px;
   margin: 10px;
+}
+
+.root {
+}
+
+.input {
+  color: #FFF;
+  border-color: #FFF;
 }

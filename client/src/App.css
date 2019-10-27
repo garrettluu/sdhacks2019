@@ -13,9 +13,13 @@
 }
 
 .Nav-Bar {
+  margin: 0;
   width: 100%;
   flex-direction: row;
   display: flex;
+  left: 0;
+  top: 0;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
   list-style-type: none;
@@ -36,5 +40,7 @@
 }
 
 .content {
+  /* 74px = height of nav bar */
+  margin-top: 74px;
   height: 100%;
 }
