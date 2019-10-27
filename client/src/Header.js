@@ -13,6 +13,7 @@ import Logo from "./Images/logo.png";
 
 import "./CSS/Header.css";
 import FindGroup from "./Pages/FindGroup";
+import CreateGroup from "./Pages/CreateGroup";
 
 class Header extends Component {
     constructor(props) {
@@ -83,6 +84,7 @@ class Header extends Component {
                     <Route exact path="/login" render={() => <Login firebase={firebase}/>}/>
                     <Route exact path="/stakks" render={() => <SelectScreen firebase={firebase}/>}/>
                     <Route exact path="/stakks/findGroup" render={() => <FindGroup firebase={firebase}/>}/>
+                    <Route exact path="/stakks/createGroup" render={() => <CreateGroup firebase={firebase}/>}/>
                 </div>
 
             </BrowserRouter>

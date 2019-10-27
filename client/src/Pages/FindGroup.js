@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, BrowserRouter, Route } from 'react-router-dom';
 import axios from 'axios';
 
 import Listing from "../components/Listing";
 import FindGroupImg from "../Images/FindGroup.png";
 import "../CSS/FindGroup.css"
+import CreateGroup from "./CreateGroup";
 
 class FindGroup extends Component {
     constructor(props) {
@@ -37,7 +38,7 @@ class FindGroup extends Component {
             console.log(listings);
             let title = listings[key].title;
             cards.push(<Listing title={listings[key].title} name={listings[key].data.name} course={listings[key].data.course}
-            onJoin={this.handleOnJoin.bind(this, title)} />);
+                                onJoin={this.handleOnJoin.bind(this, title)} />);
         }
         return cards;
     }
@@ -67,19 +68,24 @@ class FindGroup extends Component {
 
     render() {
         return (
-            <div className="FindGroup">
-                {this.redirectToLogin()}
-                <div className="half-screen">
-                    <h4 className="list-title">Available Groups</h4>
-                    {this.buildListingsfromDatabase()}
-                    <div className="listing-card">
-                        <Link className="listing-field">Create New Group +</Link>
+            <BrowserRouter>
+                <Route exact path="/stakks/findGroup">
+                    <div className="FindGroup">
+                        {this.redirectToLogin()}
+                        <div className="half-screen">
+                            <h4 className="list-title">Available Groups</h4>
+                            {this.buildListingsfromDatabase()}
+                            <div className="listing-card">
+                                <Link className="listing-field" to="/stakks/createGroup">Create New Group +</Link>
+                            </div>
+                        </div>
+                        <div className="half-screen cool-image">
+                            <img className="cool-image" src={FindGroupImg} width="50%"/>
+                        </div>
                     </div>
-                </div>
-                <div className="half-screen cool-image">
-                    <img className="cool-image" src={FindGroupImg} width="50%"/>
-                </div>
-            </div>
+                </Route>
+                <Route exact path="/stakks/createGroup" component={CreateGroup}/>
+            </BrowserRouter>
         );
     }
 }
