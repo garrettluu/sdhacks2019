@@ -1,0 +1,51 @@
+.header{
+	background-color: #0a191e;
+	width: 100%;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("/font/futura-medium-bt.ttf");
+}
+
+.Logo {
+  height:"60px";
+  width:"auto";
+}
+
+
+.title {
+  color: #d8b65c;
+  font-family: "Futura", sans-serif;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.signs{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.navBar {
+}
+
+
+.navLink {
+  color: #d8b65c;
+  font-family: "Futura", sans-serif;
+  font-size: 20px;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.content {
+  height: calc(100vh - 80px);
+	background-color: #282c34;
+}
