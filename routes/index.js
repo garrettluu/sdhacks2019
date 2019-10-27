@@ -50,6 +50,16 @@ module.exports = function(db) {
 
     res.send("Successfully posted test entry");
   });
+
+  router.post('/getstakks', async (req, res) => {
+      let stakksRef = db.collection('stakks').doc(req.body.uid);
+
+      let allStakks = await stakksRef.get()
+          .then(doc => {
+            console.log(doc.data());
+          })
+  });
+
   return router;
 };
 //module.exports = router;

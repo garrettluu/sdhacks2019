@@ -19,5 +19,6 @@ module.exports = function(admin) {
       res.send("Successfully created new user");
   });
 
+
   return router;
 }

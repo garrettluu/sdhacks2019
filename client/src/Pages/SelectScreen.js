@@ -5,12 +5,14 @@ import MyStakks from "../Images/MyStakks.png"
 import FindGroup from "../Images/FindGroup.png"
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Listing from "../components/Listing";
+import StakkView from "../StakkView";
 
 export default class SelectScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {}
+            data: {},
+            uid: ""
         };
         this.getData = this.getData.bind(this);
     }
@@ -37,6 +39,7 @@ export default class SelectScreen extends React.Component {
         }
         return cards;
     }
+
     render() {
         return (
             <div className="Screen">
@@ -54,7 +57,9 @@ export default class SelectScreen extends React.Component {
                     {this.buildListingsfromDatabase()}
 
                     {/*<div className="">*/}
-                    {/*  <Route exact path="/stakk/myStakks" component={myStakks}/>*/}
+                      <Route exact path="/stakk/myStakks" render={
+                          () => <StakkView uid="4UPyEcLaalVG9onIfWIWrq6mv4j2" />
+                      }/>
                     {/*  <Route exact path="/stakk/findGroup" component={findGroup}/>*/}
                     {/*</div>*/}
                     <div />
