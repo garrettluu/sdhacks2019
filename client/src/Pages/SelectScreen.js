@@ -1,6 +1,7 @@
 import React from "react";
+import "../CSS/SelectScreen.css";
+import "../CSS/Header.css";
 import axios from 'axios';
-import "./SelectScreen.css"
 import MyStakks from "../Images/MyStakks.png"
 import FindGroup from "../Images/FindGroup.png"
 import { BrowserRouter, Link, Route } from "react-router-dom";
@@ -8,80 +9,53 @@ import Listing from "../components/Listing";
 import StakkView from "../StakkView";
 
 export default class SelectScreen extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: {},
-            uid: ""
-        };
-        this.getData = this.getData.bind(this);
-    }
+  render() {
+    return (
+	<div className="content">
+      <BrowserRouter>
 
-    getData() {
-        axios.get("http://localhost:3001/getlistings")
-            .then(res => {
-                this.setState({
-                    data: res.data,
-                })
-            });
-    }
+      <div className="">
+        <Route exact path="/stakks">
+	    {choice()}
+	    </Route>
+        <Route exact path="/stakk/findGroup" component={findGroup}/>
+    </div>
+	    <div />
 
-    componentDidMount() {
-        this.getData();
-    }
+    </BrowserRouter>
+	    </div>
+    );
+  }
+}
 
-    buildListingsfromDatabase() {
-        let listings = this.state.data;
-        let cards = [];
-        for (let key in listings) {
-            console.log(listings);
-            cards.push(<Listing title={listings[key].title} name={listings[key].data.name} course={listings[key].data.course}/>);
-        }
-        return cards;
-    }
+function choice(){
+	return(
+          <div className="choiceContainer">
 
-    render() {
-        return (
-            <div className="Screen">
-                <BrowserRouter>
-                    <div className="Link-Container">
-                        <Link to="/stakk/myStakks">
-                            <img src={MyStakks} className="Pictures" alt="MyStakks"
-                                 height="180px" width="auto"/>
-                        </Link>
-                        <Link to="/stakk/findGroup">
-                            <img src={FindGroup} className="Pictures" alt="FindGroup"
-                                 height="180px" width="auto"/>
-                        </Link>
-                    </div>
-                    {this.buildListingsfromDatabase()}
+		<Link className="choiceTitle" to="/stakk/myStakks">
+		<div className="choice">
+		<img src={MyStakks} className="choicePic" alt="MyStakks"
+                	height="220px" width="auto"/>
+		 See Stakks
+		</div>
+		</Link>
 
-                    {/*<div className="">*/}
-                      <Route exact path="/stakk/myStakks" render={
-                          () => <StakkView uid="4UPyEcLaalVG9onIfWIWrq6mv4j2" />
-                      }/>
-                    {/*  <Route exact path="/stakk/findGroup" component={findGroup}/>*/}
-                    {/*</div>*/}
-                    <div />
+              <Link className="choiceTitle" to="/stakk/findGroup">
+		<div className="choice">
+              		<img src={FindGroup} className="choicePic" alt="FindGroup"
+                	height="220px" width="auto"/>
+		Group Up
+		</div>
+              </Link>
+        </div>
 
-                </BrowserRouter>
-            </div>
-        );
-    }
+	)
 }
 
 function myStakks(){
-    return(<h1>stakked</h1>)
+	return(<h1>stakked</h1>)
 }
 
 function findGroup(){
-    let cards = [];
-    axios.get("http://localhost:3001/getlistings")
-        .then(res => {
-            console.log(res);
-            res.data.forEach(listing => {
-                cards.push(<Listing title={listing.title} name={listing.data.name} course={listing.data.course}/>);
-            });
-        });
-    return cards;
+	return(<h1>fg</h1>)
 }

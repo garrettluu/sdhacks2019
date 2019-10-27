@@ -7,8 +7,8 @@ import axios from 'axios';
 
 import Circle from '../components/Circle';
 
-import "../App.css";
-import "../Login.css";
+import "../CSS/Login.css";
+import "../CSS/Header.css";
 
 const theme = createMuiTheme({
   overrides: {
@@ -72,7 +72,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="Login">
+      <div className="content">
         <h1 id="login-header">
           Log In
         </h1>
@@ -94,7 +94,6 @@ class Login extends Component {
             Sign in
         </button>
         </div>
-        <Circle diameter="1000px" backgroundColor="#4a9878" x="1400px" y="-230px"/>
       </div>
     );
   }
