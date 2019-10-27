@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import TextField from '@material-ui/core/TextField';
-
-import Konva from 'konva';
+import axios from 'axios';
 
 import Circle from '../components/Circle';
 
@@ -39,6 +39,37 @@ const theme = createMuiTheme({
   }
 });
 class Login extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            redirect: false,
+            isLoggedIn: false,
+        };
+    }
+
+    async loginUser() {
+        await axios.post("http://localhost:3001/users/create", {
+           email: "galuu@ucsd.edu",
+           password: "hunter2"
+       }).then(res => {
+           console.log(res);
+           console.log(res.data);
+
+       });
+
+        this.setState({redirect: true, isLoggedIn: true});
+    }
+
+   redirectToHome() {
+        if (this.state.redirect) {
+            return <Redirect to={{
+                pathname: "/stakk",
+                state: { isLoggedIn: this.state.isLoggedIn }
+            }}/>
+        }
+   }
+
   render() {
     return (
       <div className="Login">
@@ -58,7 +89,8 @@ class Login extends Component {
         </ThemeProvider>
 
         <div className="input-field">
-        <button id="signin-button">
+            {this.redirectToHome()}
+        <button id="signin-button" onClick={this.loginUser.bind(this)}>
             Sign in
         </button>
         </div>

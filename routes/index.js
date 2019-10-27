@@ -19,6 +19,22 @@ module.exports = function(db) {
     res.send("Successfully updated test database");
   });
 
+  router.get('/getlistings', async (req, res, next) => {
+    var listingArray = [];
+    let listingsRef = db.collection('listings');
+    let allListings = await listingsRef.get()
+        .then(snapshot => {
+          snapshot.forEach(doc => {
+            listingArray.push({
+                title: doc.id,
+                data: doc.data(),
+            });
+            console.log(doc.data());
+          })
+        });
+    res.send(listingArray);
+  });
+
   /* creates a listing with the specified info */
   router.post('/createlisting', (req, res, next) => {
     let listingsRef = db.collection('listings').doc(req.body.title);
@@ -34,7 +50,6 @@ module.exports = function(db) {
 
     res.send("Successfully posted test entry");
   });
-
   return router;
 };
 //module.exports = router;

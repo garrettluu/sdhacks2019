@@ -22,7 +22,7 @@ let app = express();
 app.use(cors());
 
 var indexRouter = require('./routes/index')(db);
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users')(admin);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
