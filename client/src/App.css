@@ -1,22 +1,49 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Futura";
+  src: url("/font/futura-medium-bt.ttf");
 }
 
-.App-logo {
-  height: 40vmin;
+.Logo {
+  height:"60px";
+  width:"auto";
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-left:10px;
+  margin-right:10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Nav-Bar {
+  margin: 0;
+  width: 100%;
+  flex-direction: row;
   display: flex;
-  flex-direction: column;
+  left: 0;
+  top: 0;
+  position: fixed;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style-type: none;
+  background-color: #0a191e;
+  z-index: 999;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
-.App-link {
-  color: #09d3ac;
+.Nav-Group {
+  display: flex;
+  flex-direction: row;
+}
+
+.Nav-Link {
+  color: #d8b65c;
+  font-family: "Futura", sans-serif;
+  font-size: 20px;
+  padding: 25px 50px;
+  text-decoration: none;
+}
+
+.content {
+  /* 74px = height of nav bar */
+  margin-top: 74px;
+  height: 100vh;
+
 }
