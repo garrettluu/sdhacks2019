@@ -11,6 +11,35 @@ import Logo from "./Images/logo.png";
 import "./App.css";
 
 class App extends Component {
+  testDb() {
+    console.log("Performing GET request");
+    axios.get("http://localhost:3001/testdb")
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      });
+  };
+
+  createTestEntry() {
+    let entryTest = {
+      name: "Garrett Luu",
+      course: "CSE 30",
+      location: "Geisel",
+      time: "10:00AM"
+    };
+    axios.post("http://localhost:3001/createlisting",
+      {
+        title: "Garrett's Awesome CSE Study Group!",
+        name: "Garrett Luu",
+        course: "CSE 100",
+        location: "Geisel",
+        time: "10:00AM"
+      }
+    ).then(res => {
+      console.log(res);
+      console.log(res.data);
+    });
+  }
     render() {
         return (
             <BrowserRouter>
