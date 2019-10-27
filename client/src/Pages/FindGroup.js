@@ -37,7 +37,7 @@ class FindGroup extends Component {
             console.log(listings);
             let title = listings[key].title;
             cards.push(<Listing title={listings[key].title} name={listings[key].data.name} course={listings[key].data.course}
-            onJoin={this.handleOnJoin.bind(this, title)}/>);
+            onJoin={this.handleOnJoin.bind(this, title)} />);
         }
         return cards;
     }
@@ -45,10 +45,11 @@ class FindGroup extends Component {
     handleOnJoin(title) {
         let user = this.props.firebase.auth().currentUser;
         if (user) {
-            axios.post("/joinGroup", {
+            axios.post("http://localhost:3001/joinGroup", {
                 title: title,
                 uid: user.uid,
             }).then(res => {
+
             });
         } else {
             this.setState({redirect: true})

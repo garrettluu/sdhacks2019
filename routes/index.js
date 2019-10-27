@@ -66,6 +66,8 @@ module.exports = function(db, admin) {
       listingsRef.update({
           members: admin.firestore.FieldValue.arrayUnion(req.body.uid),
       });
+
+      res.send("Success");
   });
 
   return router;
