@@ -24,6 +24,7 @@
   align-items: center;
   list-style-type: none;
   background-color: #0a191e;
+  z-index: 999;
 }
 
 .Nav-Group {
@@ -42,5 +43,6 @@
 .content {
   /* 74px = height of nav bar */
   margin-top: 74px;
-  height: 100%;
+  height: 100vh;
+
 }
