@@ -21,7 +21,7 @@ let db = admin.firestore();
 let app = express();
 app.use(cors());
 
-var indexRouter = require('./routes/index')(db);
+var indexRouter = require('./routes/index')(db, admin);
 var usersRouter = require('./routes/users')(admin);
 
 // view engine setup

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 import Listing from "../components/Listing";
@@ -11,7 +11,8 @@ class FindGroup extends Component {
         super(props);
         this.state = {
             data: {},
-            uid: ""
+            uid: "",
+            redirect: false
         };
         this.getData = this.getData.bind(this);
     }
@@ -34,14 +35,40 @@ class FindGroup extends Component {
         let cards = [];
         for (let key in listings) {
             console.log(listings);
-            cards.push(<Listing title={listings[key].title} name={listings[key].data.name} course={listings[key].data.course}/>);
+            let title = listings[key].title;
+            cards.push(<Listing title={listings[key].title} name={listings[key].data.name} course={listings[key].data.course}
+            onJoin={this.handleOnJoin.bind(this, title)} />);
         }
         return cards;
+    }
+
+    handleOnJoin(title) {
+        let user = this.props.firebase.auth().currentUser;
+        if (user) {
+            axios.post("http://localhost:3001/joinGroup", {
+                title: title,
+                uid: user.uid,
+            }).then(res => {
+
+            });
+        } else {
+            this.setState({redirect: true})
+        }
+    }
+
+    redirectToLogin() {
+        if (this.state.redirect) {
+            return <Redirect to={{
+                pathname: "/login",
+                props: {firebase: this.props.firebase}
+            }}/>
+        }
     }
 
     render() {
         return (
             <div className="FindGroup">
+                {this.redirectToLogin()}
                 <div className="half-screen">
                     <h4 className="list-title">Available Groups</h4>
                     {this.buildListingsfromDatabase()}

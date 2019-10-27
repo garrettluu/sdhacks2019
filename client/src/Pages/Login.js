@@ -48,7 +48,7 @@ class Login extends Component {
         };
     }
 
-    async loginUser() {
+    async createUser() {
         await axios.post("http://localhost:3001/users/create", {
            email: "galuu@ucsd.edu",
            password: "hunter2"
@@ -58,6 +58,11 @@ class Login extends Component {
 
        });
 
+        this.setState({redirect: true, isLoggedIn: true});
+    }
+
+    loginUser() {
+        this.props.firebase.auth().signInWithEmailAndPassword("galuu@ucsd.edu", "hunter2");
         this.setState({redirect: true, isLoggedIn: true});
     }
 

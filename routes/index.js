@@ -1,4 +1,4 @@
-module.exports = function(db) {
+module.exports = function(db, admin) {
   var express = require('express');
   var router = express.Router();
 
@@ -58,6 +58,16 @@ module.exports = function(db) {
           .then(doc => {
             console.log(doc.data());
           })
+  });
+
+  router.post('/joinGroup', (req, res) => {
+      let listingsRef = db.collection('listings').doc(req.body.title);
+
+      listingsRef.update({
+          members: admin.firestore.FieldValue.arrayUnion(req.body.uid),
+      });
+
+      res.send("Success");
   });
 
   return router;
