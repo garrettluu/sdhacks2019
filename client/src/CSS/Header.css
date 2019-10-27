@@ -54,6 +54,7 @@
 }
 
 .navBar {
+    width: 100%;
     flex-direction: row;
     display: flex;
     justify-content: space-between;
@@ -65,11 +66,11 @@
   font-size: 20px;
   padding: 12px;
   text-decoration: none;
+    line-height: 80px;
 }
 
 .navGroup {
-    display: flex;
-    flex-direction: row;
+    float: right;
     align-items: stretch;
 }
 

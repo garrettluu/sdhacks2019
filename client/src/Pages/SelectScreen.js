@@ -7,7 +7,7 @@ import FindGroupImg from "../Images/FindGroup.png"
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Listing from "../components/Listing";
 import FindGroup from "./FindGroup";
-import StakkView from "../StakkView";
+import StakkView from "./StakkView";
 
 export default class SelectScreen extends React.Component {
     render() {
@@ -18,7 +18,7 @@ export default class SelectScreen extends React.Component {
                         <Route exact path="/stakks">
                             {choice()}
                         </Route>
-                        <Route exact path="/stakks/findGroup" component={FindGroup}/>
+                        <Route exact path="/stakks/findGroup" render={() => <FindGroup firebase={this.props.firebase}/>}/>
                     </div>
                     <div />
 

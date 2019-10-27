@@ -43,5 +43,9 @@
 }
 
 .listing-join {
-
+    font-family: "Futura", sans-serif;
+    background-color: #4a9878;
+    border: none;
+    border-radius: 2px;
+    padding: 10px;
 }
