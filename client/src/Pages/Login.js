@@ -3,9 +3,6 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import TextField from '@material-ui/core/TextField';
 
-import Konva from 'konva';
-
-import Circle from '../components/Circle';
 
 import "../CSS/Login.css";
 import "../CSS/Header.css";
@@ -38,11 +35,15 @@ const theme = createMuiTheme({
     }
   }
 });
+
 class Login extends Component {
   render() {
     return (
+	  <div>
+	    <div className="test"/>
       <div className="content">
-        <h1 id="login-header">
+
+	    <h1 id="login-header">
           Log In
         </h1>
         <ThemeProvider theme={theme}>
@@ -62,7 +63,8 @@ class Login extends Component {
             Sign in
         </button>
         </div>
-      </div>
+</div>
+	    </div>
     );
   }
 }
