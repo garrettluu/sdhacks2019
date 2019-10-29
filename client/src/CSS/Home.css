@@ -8,7 +8,8 @@
 
 .splash-text {
     font-family: "Futura", sans-serif;
-    color: #d8b65c;
+    /*color: #d8b65c;*/
+    color: white;
     font-size: 72px;
     line-height: 500px;
     text-align: center;

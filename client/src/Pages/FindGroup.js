@@ -68,8 +68,7 @@ class FindGroup extends Component {
 
     render() {
         return (
-            <BrowserRouter>
-                <Route exact path="/stakks/findGroup">
+            <div>
                     <div className="FindGroup">
                         {this.redirectToLogin()}
                         <div className="half-screen">
@@ -83,9 +82,7 @@ class FindGroup extends Component {
                             <img className="cool-image" src={FindGroupImg} width="50%"/>
                         </div>
                     </div>
-                </Route>
-                <Route exact path="/stakks/createGroup" component={CreateGroup}/>
-            </BrowserRouter>
+            </div>
         );
     }
 }

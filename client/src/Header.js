@@ -54,7 +54,6 @@ class Header extends Component {
 
     render() {
         return (
-            <BrowserRouter>
                 <div className="header">
                     <div className="navBar">
                         <div className="signs">
@@ -79,15 +78,7 @@ class Header extends Component {
 
                 </div>
 
-                <div className="content">
-                    <Route exact path="/" component={Home}/>
-                    <Route exact path="/login" render={() => <Login firebase={firebase}/>}/>
-                    <Route exact path="/stakks" render={() => <SelectScreen firebase={firebase}/>}/>
-                    <Route exact path="/stakks/findGroup" render={() => <FindGroup firebase={firebase}/>}/>
-                    <Route exact path="/stakks/createGroup" render={() => <CreateGroup firebase={firebase}/>}/>
-                </div>
 
-            </BrowserRouter>
         );
     }
 }

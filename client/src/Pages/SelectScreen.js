@@ -13,16 +13,7 @@ export default class SelectScreen extends React.Component {
     render() {
         return (
             <div className="content">
-                <BrowserRouter>
-                    <div className="">
-                        <Route exact path="/stakks">
-                            {choice()}
-                        </Route>
-                        <Route exact path="/stakks/findGroup" render={() => <FindGroup firebase={this.props.firebase}/>}/>
-                    </div>
-                    <div />
-
-                </BrowserRouter>
+                    {choice()}
             </div>
         );
     }
