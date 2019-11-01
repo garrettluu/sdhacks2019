@@ -11,32 +11,30 @@ import "../CSS/Login.css";
 import "../CSS/Header.css";
 
 const theme = createMuiTheme({
-  overrides: {
-    MuiInputLabel: {
-      root: {
-        color: 'white',
-        "&$focused": {
-          color: '#d8b65c'
-        }
-      }
-    },
-    MuiInput: {
-      underline: {
-        //borderBottom: '2px solid white',
-        "&$focused": {
-          borderColor: '#d8b65c',
+    overrides: {
+        MuiOutlinedInput: {
+            root: {
+                '&$focused $notchedOutline': {
+                    borderColor: '#d8b65c',
+                    borderWidth: 2,
+                },
+            },
+            notchedOutline: {
+                borderColor: 'white',
+            },
+            input: {
+                color: 'white'
+            },
         },
-        "&:before": {
-          borderColor: 'white',
-          borderBottom: '2px solid white',
+        MuiInputLabel: {
+            root: {
+                color: 'white',
+                "&$focused": {
+                    color: '#d8b65c'
+                }
+            }
         },
-        "&:after": {
-          borderColor: '#d8b65c',
-          borderBottom: '2px solid #d8b65c',
-        }
-      }
     }
-  }
 });
 class Login extends Component {
     constructor(props) {
@@ -50,13 +48,13 @@ class Login extends Component {
 
     async createUser() {
         await axios.post("http://localhost:3001/users/create", {
-           email: "galuu@ucsd.edu",
-           password: "hunter2"
-       }).then(res => {
-           console.log(res);
-           console.log(res.data);
+            email: "galuu@ucsd.edu",
+            password: "hunter2"
+        }).then(res => {
+            console.log(res);
+            console.log(res.data);
 
-       });
+        });
 
         this.setState({redirect: true, isLoggedIn: true});
     }
@@ -66,42 +64,42 @@ class Login extends Component {
         this.setState({redirect: true, isLoggedIn: true});
     }
 
-   redirectToHome() {
+    redirectToHome() {
         if (this.state.redirect) {
             return <Redirect to={{
                 pathname: "/stakks",
                 state: { isLoggedIn: this.state.isLoggedIn }
             }}/>
         }
-   }
+    }
 
-  render() {
-    return (
-      <div className="content">
-        <h1 id="login-header">
-          Log In
-        </h1>
-        <ThemeProvider theme={theme}>
-          <div className="input-field">
-            <TextField type="text" variant="standard" label="Username"
-              placeholder="example123" className="root"
-            />
-          </div>
-          <div className="input-field">
-            <TextField type="password" variant="standard" label="Password"
-              placeholder="hunter2" className="root"/>
-          </div>
-        </ThemeProvider>
+    render() {
+        return (
+            <div className="content">
+                <h1 id="login-header">
+                    Log In
+                </h1>
+                <ThemeProvider theme={theme}>
+                    <div className="input-field">
+                        <TextField type="text" variant="outlined" label="Username"
+                                   placeholder="example123" className="root"
+                        />
+                    </div>
+                    <div className="input-field">
+                        <TextField type="password" variant="outlined" label="Password"
+                                   placeholder="hunter2" className="root"/>
+                    </div>
+                </ThemeProvider>
 
-        <div className="input-field">
-            {this.redirectToHome()}
-        <button id="signin-button" onClick={this.loginUser.bind(this)}>
-            Sign in
-        </button>
-        </div>
-      </div>
-    );
-  }
+                <div className="input-field">
+                    {this.redirectToHome()}
+                    <button id="signin-button" onClick={this.loginUser.bind(this)}>
+                        Sign in
+                    </button>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default Login;
