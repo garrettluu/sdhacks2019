@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
 import Header from "./Header.js";
-import Home from "./Pages/Home";
-import Login from "./Pages/Login";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 import * as firebase from "firebase";
-import SelectScreen from "./Pages/SelectScreen";
-import FindGroup from "./Pages/FindGroup";
-import CreateGroup from "./Pages/CreateGroup";
+import SelectScreen from "./pages/SelectScreen";
+import FindGroup from "./pages/FindGroup";
+import CreateGroup from "./pages/CreateGroup";
 import {BrowserRouter, Route} from "react-router-dom";
 
 function App () {

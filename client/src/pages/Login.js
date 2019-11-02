@@ -7,8 +7,8 @@ import axios from 'axios';
 
 import Circle from '../components/Circle';
 
-import "../CSS/Login.css";
-import "../CSS/Header.css";
+import "../stylesheets/Login.css";
+import "../stylesheets/Header.css";
 
 const theme = createMuiTheme({
     overrides: {
