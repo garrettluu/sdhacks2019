@@ -3,8 +3,8 @@ import { Link, Redirect, BrowserRouter, Route } from 'react-router-dom';
 import axios from 'axios';
 
 import Listing from "../components/Listing";
-import FindGroupImg from "../Images/FindGroup.png";
-import "../CSS/FindGroup.css"
+import FindGroupImg from "../images/FindGroup.png";
+import "../stylesheets/FindGroup.css"
 import CreateGroup from "./CreateGroup";
 
 class FindGroup extends Component {

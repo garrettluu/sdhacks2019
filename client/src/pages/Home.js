@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import "../CSS/Home.css";
-import homepageimg from "../Images/Homepage.jpg";
+import "../stylesheets/Home.css";
+import homepageimg from "../images/Homepage.jpg";
 
 
 
