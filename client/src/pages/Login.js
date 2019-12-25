@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link} from 'react-router-dom';
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
-
-import Circle from '../components/Circle';
 
 import "../stylesheets/Login.css";
 import "../stylesheets/Header.css";
@@ -97,6 +95,11 @@ class Login extends Component {
                         Sign in
                     </button>
                 </div>
+
+                <Link id="signup-link" to="/signup">
+                    Don't have an account?
+                </Link>
+
             </div>
         );
     }
