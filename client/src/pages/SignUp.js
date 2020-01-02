@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
-import { Redirect, Link} from 'react-router-dom';
+import React, { Component } from "react";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
-import TextField from '@material-ui/core/TextField';
-import axios from 'axios';
-
-import "../stylesheets/Login.css";
-import "../stylesheets/Header.css";
+import TextField from "@material-ui/core/TextField";
+import axios from "axios";
 
 const theme = createMuiTheme({
     overrides: {
@@ -34,36 +30,35 @@ const theme = createMuiTheme({
         },
     }
 });
-class Login extends Component {
+
+export default class SignUp extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            redirect: false,
-            isLoggedIn: false,
+            email: "",
+            password: "",
         };
     }
 
+    async createUser() {
+        await axios.post("http://localhost:3001/users/create", {
+            email: this.state.email,
+            password: this.state.password
+        }).then(res => {
+            console.log(res);
+            console.log(res.data);
 
-    loginUser() {
-        this.props.firebase.auth().signInWithEmailAndPassword("galuu@ucsd.edu", "hunter2");
-        this.setState({redirect: true, isLoggedIn: true});
-    }
+        });
 
-    redirectToHome() {
-        if (this.state.redirect) {
-            return <Redirect to={{
-                pathname: "/stakks",
-                state: { isLoggedIn: this.state.isLoggedIn }
-            }}/>
-        }
+        //update state here
     }
 
     render() {
         return (
             <div className="content">
                 <h1 id="login-header">
-                    Log In
+                    Sign Up
                 </h1>
                 <ThemeProvider theme={theme}>
                     <div className="input-field">
@@ -76,21 +71,7 @@ class Login extends Component {
                                    placeholder="hunter2" className="root"/>
                     </div>
                 </ThemeProvider>
-
-                <div className="input-field">
-                    {this.redirectToHome()}
-                    <button id="signin-button" onClick={this.loginUser.bind(this)}>
-                        Sign in
-                    </button>
-                </div>
-
-                <Link id="signup-link" to="/signup">
-                    Don't have an account?
-                </Link>
-
             </div>
-        );
+        )
     }
 }
-
-export default Login;
