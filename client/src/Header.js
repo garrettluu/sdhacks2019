@@ -5,15 +5,15 @@ import * as firebase from 'firebase';
 import 'firebase/auth';
 import firebaseConfig from './private-firebase.json';
 
-import Login from "./Pages/Login.js";
-import Home from "./Pages/Home.js";
-import SelectScreen from "./Pages/SelectScreen.js";
+import Login from "./pages/Login.js";
+import Home from "./pages/Home.js";
+import SelectScreen from "./pages/SelectScreen.js";
 
-import Logo from "./Images/logo.png";
+import Logo from "./images/logo.png";
 
-import "./CSS/Header.css";
-import FindGroup from "./Pages/FindGroup";
-import CreateGroup from "./Pages/CreateGroup";
+import "./stylesheets/Header.css";
+import FindGroup from "./pages/FindGroup";
+import CreateGroup from "./pages/CreateGroup";
 
 class Header extends Component {
     constructor(props) {
@@ -54,40 +54,27 @@ class Header extends Component {
 
     render() {
         return (
-            <BrowserRouter>
-                <div className="header">
-                    <div className="navBar">
-                        <div className="signs">
+            <div className="header">
+                <div className="navBar">
+                    <div className="signs">
 
-                            <img src={Logo} className="Logo" alt="logo"
-                                 height="60px" width="auto"/>
-                            <Link className= "title" to="/">
-                                STAKK
-
-                            </Link>
-                        </div>
-
-                        <div className="navGroup">
-                            <Link className="navLink" to="/stakks">
-                                View
-                            </Link>
-                            <Link className="navLink" to="/login" onClick={this.handleLogout.bind(this)}>
-                                {this.loginLogout()}
-                            </Link>
-                        </div>
+                        <img src={Logo} className="Logo" alt="logo"
+                             height="60px" width="auto"/>
+                        <Link className= "title" to="/">
+                            STAKK
+                        </Link>
                     </div>
 
+                    <div className="navGroup">
+                        <Link className="navLink" to="/stakks">
+                            View
+                        </Link>
+                        <Link className="navLink" to="/login" onClick={this.handleLogout.bind(this)}>
+                            {this.loginLogout()}
+                        </Link>
+                    </div>
                 </div>
-
-                <div className="content">
-                    <Route exact path="/" component={Home}/>
-                    <Route exact path="/login" render={() => <Login firebase={firebase}/>}/>
-                    <Route exact path="/stakks" render={() => <SelectScreen firebase={firebase}/>}/>
-                    <Route exact path="/stakks/findGroup" render={() => <FindGroup firebase={firebase}/>}/>
-                    <Route exact path="/stakks/createGroup" render={() => <CreateGroup firebase={firebase}/>}/>
-                </div>
-
-            </BrowserRouter>
+            </div>
         );
     }
 }

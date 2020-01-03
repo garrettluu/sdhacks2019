@@ -1,9 +1,9 @@
 import React from "react";
-import "../CSS/SelectScreen.css";
-import "../CSS/Header.css";
+import "../stylesheets/SelectScreen.css";
+import "../stylesheets/Header.css";
 import axios from 'axios';
-import MyStakks from "../Images/MyStakks.png"
-import FindGroupImg from "../Images/FindGroup.png"
+import MyStakks from "../images/MyStakks.png"
+import FindGroupImg from "../images/FindGroup.png"
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Listing from "../components/Listing";
 import FindGroup from "./FindGroup";
@@ -13,16 +13,7 @@ export default class SelectScreen extends React.Component {
     render() {
         return (
             <div className="content">
-                <BrowserRouter>
-                    <div className="">
-                        <Route exact path="/stakks">
-                            {choice()}
-                        </Route>
-                        <Route exact path="/stakks/findGroup" render={() => <FindGroup firebase={this.props.firebase}/>}/>
-                    </div>
-                    <div />
-
-                </BrowserRouter>
+                    {choice()}
             </div>
         );
     }

@@ -1,8 +1,8 @@
-import FindGroupImg from "../Images/FindGroup.png";
+import FindGroupImg from "../images/FindGroup.png";
 import React, { Component } from "react";
 import { Link, Redirect } from 'react-router-dom';
 
-import "../CSS/FindGroup.css";
+import "../stylesheets/FindGroup.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import axios from 'axios';
