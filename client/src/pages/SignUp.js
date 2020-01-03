@@ -70,6 +70,15 @@ export default class SignUp extends Component {
                         <TextField type="password" variant="outlined" label="Password"
                                    placeholder="hunter2" className="root"/>
                     </div>
+                    <div className="input-field">
+                        <TextField type="password" variant="outlined" label="Confirm password"
+                                   placeholder="hunter2" className="root"/>
+                    </div>
+                    <div className="input-field">
+                        <button id="signin-button">
+                            Sign up
+                        </button>
+                    </div>
                 </ThemeProvider>
             </div>
         )

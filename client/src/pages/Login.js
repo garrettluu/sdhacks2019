@@ -41,12 +41,22 @@ class Login extends Component {
         this.state = {
             redirect: false,
             isLoggedIn: false,
+            email: "",
+            password: "",
         };
+    }
+
+    setEmail(event) {
+        this.setState({email: event.target.value});
+    }
+
+    setPassword(event) {
+        this.setState({password: event.target.value});
     }
 
 
     loginUser() {
-        this.props.firebase.auth().signInWithEmailAndPassword("galuu@ucsd.edu", "hunter2");
+        this.props.firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password);
         this.setState({redirect: true, isLoggedIn: true});
     }
 
@@ -69,11 +79,14 @@ class Login extends Component {
                     <div className="input-field">
                         <TextField type="text" variant="outlined" label="Username"
                                    placeholder="example123" className="root"
+                                   onChange={this.setEmail.bind(this)}
                         />
                     </div>
                     <div className="input-field">
                         <TextField type="password" variant="outlined" label="Password"
-                                   placeholder="hunter2" className="root"/>
+                                   placeholder="hunter2" className="root"
+                                   onChange={this.setPassword.bind(this)}
+                        />
                     </div>
                 </ThemeProvider>
 
