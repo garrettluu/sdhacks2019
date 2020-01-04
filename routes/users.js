@@ -9,9 +9,9 @@ module.exports = function(admin) {
 
   router.post('/create', (req, res, next) => {
       admin.auth().createUser({
-        email: "galuu@ucsd.edu",
+        email: req.body.email,
         emailVerified: false,
-        password: "hunter2"
+        password: req.body.password,
       }).then((userRecord) => {
           console.log('Successfully created new user:', userRecord.uid);
       });

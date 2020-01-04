@@ -61,7 +61,6 @@ export default class SignUp extends Component {
             console.log(res.data);
 
         });
-        this.props.firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password);
 
         this.setState({redirect: true, isLoggedIn: true});
         //update state here
